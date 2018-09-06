@@ -7,9 +7,10 @@ holberton [STUDENTNAME]
 Holberton School is a project-based alternative to college for the next generation of software engineers.
 .SH OPTIONS
 holberton does not take any options. However, you can supply studentname.
-.SH "SEE ALSO"
+.SH SEE ALSO
 .I peerlearning(2), projectbased(2), fullstack(2), Betty(1)
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Julien Barbier, Sylvanian Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemeier, Julien Cyr, Alex Gautier and all the Holberton mentors
+Julien Barber, Sylvain Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemeier, Julien Cyr, Alex Gautier and al a a the Holberton mentors
+
