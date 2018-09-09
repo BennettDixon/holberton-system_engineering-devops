@@ -1,3 +1,2 @@
 #!/bin/bash
-#possible source of error is the \n and -e flag in echo statement. File name is correct.
 echo -e "Holberton School\n" > "\\*\\\\'\"Holberton School\"\\'\\\\*\$\\?\\*\\*\\*\\*\\*:)"
