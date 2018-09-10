@@ -1,2 +1,2 @@
 #!/bin/bash
-echo {a..z}{{a..n},{p..z}} | sort | tr ' ' '\n' 
+printf "%s\n" {a..z}{a..z} | grep -v [o][o] | sort
