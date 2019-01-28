@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script is for reading and cutting!
+cut -f1,3,6 -d':' "/etc/passwd"
