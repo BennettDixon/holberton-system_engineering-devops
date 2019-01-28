@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 # this script is for reading and cutting!
-cut -f1,3,6 -d':' "/etc/passwd"
+while read line; do
+	username=$(echo "$line" | cut -d: -f1)
+	user_id=$(echo "$line" | cut -d: -f3)
+	home=$(echo "$line" | cut -d: -f6)
+	echo "$username:$user_id:$home"
+done < "/etc/passwd"
