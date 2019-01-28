@@ -1,6 +1,6 @@
-# :shell: Learning Bash :shell:
+# :shell: 0x04 - Bash, Loops, and conditionals :shell:
 
-In this project I will be learning various techniques to use bash for scripting. I hope to use bash to make my coding, development, and deployment in 2019 much more seemless. I use python for scripting right now, but bash is very powerful for common SRE tasks so I feel I must learn it to be proficient as a software engineer.
+In this project I will be further exploring bash programming. Using this scripting language will improve my ability as an SRE among other things. Overall in 2019 I hope to use bash for more scripting use and efficiency in day to day routines.
 
 ## :running: Getting Started
 
