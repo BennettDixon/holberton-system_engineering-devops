@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this bash script uses while loops to print Holberton School
+i=0
+while ((i < 10))
+	do echo 'Holberton School'
+	i=$i+1
+done
