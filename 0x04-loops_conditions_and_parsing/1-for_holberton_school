@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # bash script to print holberton 10 times to stdout
-for i in {1..10}
-	do echo 'holberton'
+for _ in {1..10}
+	do echo 'Holberton School'
 done
