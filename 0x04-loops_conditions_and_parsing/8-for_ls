@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # displays current content of dir after everything with '-'
-for i in $( ls ); do
-	echo $i | cut -f2 -d'-'
+for i in *; do
+	echo "$i" | cut -f2 -d'-'
 done

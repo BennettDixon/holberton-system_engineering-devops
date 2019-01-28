@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# fizzbuzz classic interview problem but in bash!
+for i in {1..100}; do
+	fb=$i % 3 + $i % 5
+	f=$i % 3
+	b=$i % 5
+	case 0 in
+		$fb)
+			echo 'FizzBuzz'
+			;;
+		$f)
+			echo 'Fizz'
+			;;
+		$b)
+			echo 'Buzz'
+			;;
+		*)
+			echo $i
+			;;
+	esac
+done

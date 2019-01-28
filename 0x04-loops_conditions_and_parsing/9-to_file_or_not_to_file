@@ -4,7 +4,7 @@ file="holbertonschool"
 if [ -f "$file" -o -b "$file" -o -c "$file" -o -d "$file" ]; then
 	echo "$file file exists"
 	if [ -f "$file" ]; then
-		if [ "$(cat $file | wc -c)" -gt 1 ]; then
+		if [ "$(wc -c $file)" != "0" ]; then
 			echo "$file is not empty"
 		else
 			echo "$file is empty"
