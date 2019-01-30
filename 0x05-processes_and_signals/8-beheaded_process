@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # destroying a process even if it protects SIGTERM
 id=$(pgrep -f './7-highlander')
-echo $id
 kill -s SIGKILL $id
