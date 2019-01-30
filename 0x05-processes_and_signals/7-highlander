@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script for intercepting SIGTERM
+const=0
+trap 'echo "I am invincible!!!"' SIGTERM
+while [ $const ]; do
+	echo 'To infinity and beyond'
+	sleep 2
+done

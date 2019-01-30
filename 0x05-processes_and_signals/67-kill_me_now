@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script for easier killing using full name matching and pkill
+pkill -f "./7-highlander"
