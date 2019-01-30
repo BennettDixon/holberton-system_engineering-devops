@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script to print its own id
+echo $BASHPID
