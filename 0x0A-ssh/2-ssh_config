@@ -1,0 +1,10 @@
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+
+# holberton server config options
+Host 35.243.204.105
+    IdentityFile ~/.ssh/holberton
+    Protocol 2
