@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# script to install and setup nginx
+INSERT_LINE="\n\t^/redirect_me / permanent;"
+
+# install nginx
+apt-get -y update
+apt-get -y install nginx
+
+# update config file to redirect
+sed -i "/server_name localhost;/a$INSERT_LINE"
+
+# update index.html file
+echo 'Holberton School' > /usr/share/nginx/html/index.html
+
+# start nginx after reloading config
+service nginx reload
+service nginx start
