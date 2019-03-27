@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # script to install and setup nginx
-INSERT_LINE="rewrite ^/redirect_me / permanent;"
+INSERT_LINE="\ \n\trewrite ^/redirect_me / permanent;"
 CONFIG_FILE="/etc/nginx/sites-available/default"
 # install nginx
 apt-get -y update
