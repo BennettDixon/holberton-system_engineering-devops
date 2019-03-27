@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# script to install and setup nginx
+INSERT_LINE="\ \n\trewrite ^/redirect_me / permanent;\n\terror_page 404 /404.html;\n"
+CONFIG_FILE="/etc/nginx/sites-available/default"
+# install nginx
+apt-get -y update
+apt-get -y install nginx
+
+# update index.html file
+echo 'Holberton School' > /usr/share/nginx/html/index.html
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
+
+# update config file to redirect
+sed -i "/server_name localhost;/a$INSERT_LINE" $CONFIG_FILE
+
+# start nginx after reloading config
+service nginx start
