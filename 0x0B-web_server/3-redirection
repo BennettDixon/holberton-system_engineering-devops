@@ -12,7 +12,7 @@ echo 'Holberton School' > /usr/share/nginx/html/index.html
 printf %s "server {
     listen 80;
     listen [::]:80 default_server;
-    root   /etc/nginx/html;
+    root   /usr/share/nginx/html;
     index  index.html index.htm;
 
     location /redirect_me {
