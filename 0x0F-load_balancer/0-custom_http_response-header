@@ -2,6 +2,17 @@
 # script to install and setup nginx
 CONFIG_FILE="/etc/nginx/sites-available/default"
 HOST_NAME=$(hostname)
+MY_ID=496
+
+# check if hostname is correct
+if [[ $(hostname) =~ ^$MY_ID-web-[0-9]+ ]]; then
+    echo 'hostname properly configured'
+else
+    (>&2 echo 'hostname not configured properly...')
+    (>&2 echo 'please set hostname to pattern: 496-web-<server_id>...')
+    (>&2 echo 'Example: sudo hostnamectl set-hostname 496-web-<insert_server_id_here>')
+fi
+
 # install nginx
 apt-get -y update
 apt-get -y install nginx
