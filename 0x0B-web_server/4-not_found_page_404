@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # script to install and setup nginx
-INSERT_LINE="\ \n\trewrite ^/redirect_me / permanent;\n\terror_page 404 /404.html;\n"
 CONFIG_FILE="/etc/nginx/sites-available/default"
 # install nginx
 apt-get -y update
@@ -26,7 +25,7 @@ printf %s "server {
       root /usr/share/nginx/html;
       internal;
     }
-}" > /etc/nginx/sites-available/default
+}" > $CONFIG_FILE
 
 # start nginx after reloading config
 service nginx start
