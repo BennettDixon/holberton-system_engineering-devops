@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# script to install and setup nginx
+CONFIG_FILE="/etc/nginx/sites-available/default"
+HOST_NAME=$(hostname)
+# install nginx
+apt-get -y update
+apt-get -y install nginx
+
+# update index.html file
+echo 'Holberton School' > /usr/share/nginx/html/index.html
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
+
+# update config file to redirect
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+
+    add_header X-Served-By $HOST_NAME;
+
+    location /redirect_me {
+        return 301 http://google.com/;
+    }
+
+    error_page 404 /404.html;
+    location /404 {
+      root /usr/share/nginx/html;
+      internal;
+    }
+}" > $CONFIG_FILE
+
+# start nginx after reloading config
+service nginx start
+# if nginx was already running restart it
+service nginx restart
