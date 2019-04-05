@@ -10,7 +10,16 @@ apt-get -y install nginx
 echo 'Holberton School' > /usr/share/nginx/html/index.html
 
 # update config file to redirect
-sed -i "/server_name localhost;/a$INSERT_LINE" $CONFIG_FILE
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+
+    location /redirect_me {
+        return 301 http://google.com/;
+    }
+}" > /etc/nginx/sites-available/default
 
 # start nginx after reloading config
 service nginx start
