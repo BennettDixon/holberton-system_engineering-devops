@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # script to install and setup nginx
-INSERT_LINE="\ \n\trewrite ^/redirect_me / permanent;"
 CONFIG_FILE="/etc/nginx/sites-available/default"
 # install nginx
 apt-get -y update
@@ -19,7 +18,7 @@ printf %s "server {
     location /redirect_me {
         return 301 http://google.com/;
     }
-}" > /etc/nginx/sites-available/default
+}" > $CONFIG_FILE
 
 # start nginx after reloading config
 service nginx start
