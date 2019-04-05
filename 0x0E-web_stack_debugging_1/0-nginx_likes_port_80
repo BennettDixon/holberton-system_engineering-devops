@@ -2,6 +2,6 @@
 # script to fix nginx server that won't shut off via daemon manager
 mv /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 cp /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default 
-service stop nginx
+service nginx stop
 pkill nginx
-service start nginx
+service nginx start
