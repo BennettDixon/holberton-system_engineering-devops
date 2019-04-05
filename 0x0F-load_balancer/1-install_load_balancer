@@ -25,7 +25,7 @@ else
 fi
 
 # check if HAProxy was previously configured
-if [ $(grep -o "$INPUT_LINE" $CONFIG_FILE | wc -l) != 0 ]; then
+if [ "$(grep -o "$INPUT_LINE" $CONFIG_FILE | wc -l)" != 0 ]; then
 	echo 'HAProxy already configured to script specs :)...'
 	# restart HAProxy
 	service haproxy restart
@@ -38,7 +38,7 @@ else
 
 	# configure HAProxyd
 
-	printf "$INPUT_LINE" >> $CONFIG_FILE
+	printf "%s" "$INPUT_LINE" >> $CONFIG_FILE
 
 	# start HAProxy
 	service haproxy start
