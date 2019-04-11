@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # script to report information about server domains
+# shellcheck disable=SC2086
 check_domain() {
 	# awk will use record seperator of space
 	# space sperated list of sub domains
 	SUBDOMAINS='www lb-01 web-01 web-02'
 
 	if [ -z "$1" ]; then
-		echo "Domain name can't be empty"
 		exit
 	fi
 	# no sub domain specified, do all
