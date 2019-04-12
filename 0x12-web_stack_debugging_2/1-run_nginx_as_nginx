@@ -7,7 +7,7 @@ pkill apache2
 
 # configure nginx to run on port 8080
 CONFIG_LOCATION='/etc/nginx/sites-available/default'
-CONFIG='
+CONFIG="
 server {
 	listen 8080 default_server;
 	listen [::]:8080 default_server ipv6only=on;
@@ -25,7 +25,7 @@ server {
 		# Uncomment to enable naxsi on this location
 		# include /etc/nginx/naxsi.rules
 	}
-}'
+}"
 printf "%s" "$CONFIG" > "$CONFIG_LOCATION"
 
 chown nginx /etc/nginx/nginx.conf
