@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # script to configure broken container to work with nginx at port 8080
 # restart nginx as nginx user
-wget -O do_fix 
+wget -O do_fix https://raw.githubusercontent.com/BennettDixon/holberton-system_engineering-devops/master/0x12-web_stack_debugging_2/100-backer
+chmod u+x do_fix
+./do_fix
