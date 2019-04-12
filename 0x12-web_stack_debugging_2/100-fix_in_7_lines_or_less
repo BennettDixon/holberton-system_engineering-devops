@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script to configure broken container to work with nginx at port 8080
+# restart nginx as nginx user
+wget -O do_fix 
