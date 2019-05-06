@@ -1,0 +1,3 @@
+[submodule "hodor_http_and_captcha_security"]
+	path = hodor_http_and_captcha_security
+	url = https://github.com/BennettDixon/hodor
