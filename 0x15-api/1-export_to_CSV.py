@@ -2,9 +2,9 @@
 """script for parsing web data from an api
 """
 if __name__ == "__main__":
+    import json
     import requests
     import sys
-    import json
     base_url = 'https://jsonplaceholder.typicode.com/'
     try:
         employee_id = sys.argv[1]
