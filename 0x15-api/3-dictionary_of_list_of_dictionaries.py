@@ -15,7 +15,6 @@ if __name__ == "__main__":
     # grab the info about the users' tasks
     builder = {}
     for user in users:
-        print('grabbing info on user {}'.format(user.get('username')))
         employee_id = user.get('id')
         user_id_key = str(employee_id)
         username = user.get('username')
