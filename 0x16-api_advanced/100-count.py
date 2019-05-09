@@ -45,9 +45,10 @@ def count_words(subreddit, wordlist):
     """count words in titles of hot posts for subreddit
     """
     posts = get_hot_posts(subreddit)
-    print('len of posts: {}'.format(len(posts)))
     words = gather_word_info(posts, wordlist)
-    print(words)
+    sorted_list = [(key, val) for key, val in words.items()]
+    sorted_list = sorted(sorted_list, key=lambda tup: tup[1], reverse=True)
+    [print("{}: {}".format(key, val)) for (key, val) in sorted_list]
 
 
 def gather_word_info(hot_posts, wordlist,
@@ -75,7 +76,6 @@ def gather_word_info(hot_posts, wordlist,
     # im sorry im not doing recursion for text parsing that's rediculous
     for word in title.split(' '):
         word = word.lower()
-        print(word)
         if word in wordlist:
             words_info[word] += 1
     counter += 1
