@@ -45,10 +45,13 @@ def count_words(subreddit, wordlist):
     """count words in titles of hot posts for subreddit
     """
     posts = get_hot_posts(subreddit)
+    if posts is None:
+        print(end="")
+        return
     words = gather_word_info(posts, wordlist)
     sorted_list = [(key, val) for key, val in words.items()]
     sorted_list = sorted(sorted_list, key=lambda tup: tup[1], reverse=True)
-    [print("{}: {}".format(key, val)) for (key, val) in sorted_list]
+    [print("{}: {}".format(key, val)) for (key, val) in sorted_list if val > 0]
 
 
 def gather_word_info(hot_posts, wordlist,
@@ -57,6 +60,8 @@ def gather_word_info(hot_posts, wordlist,
                      words_info=None):
     """does the recursion to grab word info from wordlist and posts
     """
+    if hot_posts is None:
+        return
     # generate defaults
     if posts_len is None:
         posts_len = len(hot_posts)
