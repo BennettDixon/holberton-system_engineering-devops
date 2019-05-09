@@ -33,4 +33,3 @@ def top_ten(subreddit):
         if i == 10:
             break
         print(post_dict.get('data').get('title'))
-
