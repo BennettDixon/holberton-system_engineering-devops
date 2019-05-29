@@ -1,0 +1,54 @@
+upstream gunicorn_app {
+    server 0.0.0.0:5000;
+}
+
+upstream odd_even_app {
+    server 0.0.0.0:5001;
+}
+
+upstream api {
+    server 0.0.0.0:5002;
+}
+
+server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /data/web_static/current;
+    index  index.html index.htm 8-index.html;
+
+    add_header X-Served-By 496-web-01;
+
+    location / {
+        alias /data/web_static/current/;
+    }
+
+    location /airbnb-onepage {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://gunicorn_app;
+    }
+
+    location /api {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://api;
+    }
+
+    location /airbnb-dynamic/number_odd_or_even {
+        rewrite /airbnb-dynamic/(.*) /$1 break;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://odd_even_app;
+    }
+
+    location /redirect_me {
+        return 301 http://google.com/;
+    }
+
+    location /hbnb_static {
+        alias /data/web_static/current/;
+    }
+
+    error_page 404 /404.html;
+    location /404 {
+      root /usr/share/nginx/html;
+      internal;
+    }
+}
