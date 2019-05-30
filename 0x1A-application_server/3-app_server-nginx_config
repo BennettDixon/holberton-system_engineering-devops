@@ -1,3 +1,4 @@
+# server configuration for nginx gunicorn stack
 upstream gunicorn_app {
     server 0.0.0.0:5000;
 }
