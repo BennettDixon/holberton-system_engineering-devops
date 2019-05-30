@@ -1,5 +1,4 @@
-
-tream gunicorn_app{
+upstream gunicorn_app{
     server 0.0.0.0:5000;
 }
 
@@ -34,4 +33,3 @@ server {
       internal;
     }
 }
-This project will be about configuring sumologic for monitoring servers and computers.
